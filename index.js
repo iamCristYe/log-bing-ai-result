@@ -15,11 +15,15 @@ const res = []
 
 const pushLatest = () => {
     let cards = querySelectorAll(document, ".ac-adaptiveCard")
-    let latest = cards[cards.length - 1].innerText
-    if (res[res.length - 1] !== latest) {
-        res.push(latest)
-        console.log(res[res.length - 1])
+    if (cards && cards[cards.length - 1]) {
+        let latest = cards[cards.length - 1].innerText
+        if (res[res.length - 1] !== latest) {
+            res.push(latest)
+            console.log(res[res.length - 1])
+        }
     }
 }
 
-setInterval(pushLatest, 100)
+setInterval(pushLatest, 50)
+
+console.clear()
